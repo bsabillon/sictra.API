@@ -5,6 +5,7 @@ const database = require ('../configuration/database');
   const Usuarios = database.define('usuarios', {
     idusuario: {
       type: Sequelize.INTEGER,
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true
     },

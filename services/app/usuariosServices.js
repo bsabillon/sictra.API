@@ -15,7 +15,7 @@ var methods = {
 
     addUsuarios: function(request, response){
         Usuarios.create(
-            reques.body
+            request.body
         )
         .then(usuario=>{
             response
