@@ -13,7 +13,18 @@ var methods = {
         })
     },
 
-
+    addUsuarios: function(request, response){
+        Usuarios.create(
+            reques.body
+        )
+        .then(usuario=>{
+            response
+            .status(200)
+            .send('Usuario agregado correctamente');
+        })
+        .catch(error=>
+            response.send("Error: "+ error))
+    },
 
 }
 module.exports= methods;
