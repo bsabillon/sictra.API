@@ -3,7 +3,7 @@ const Usuarios = require('../../models/usuarios');
 
 var methods = {
 
-    getUsuarios: function(request,response){
+    obtenerUsuarios: function(request,response){
         Usuarios.findAll()
         .then(usuarios=>{
             response.json(usuarios);
@@ -13,7 +13,21 @@ var methods = {
         })
     },
 
-    addUsuarios: function(request, response){
+    obtenerUsuarioPorLogin: function(request,response){
+        Usuarios.findAll({
+            where: {
+                usuario_login: request.params.usuario_login
+              } 
+        })
+        .then(usuarios=>{
+            response.json(usuarios);
+        })
+        .catch((error)=>{
+            response.send("Error: "+ error)
+        })
+    },
+
+    agregarUsuarios: function(request, response){
         Usuarios.create(
             request.body
         )

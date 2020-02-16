@@ -5,8 +5,10 @@ const usuariosServices = require('../services/app/usuariosServices');
 
 
 
-router.get('/',usuariosServices.getUsuarios);
-router.post('/agregar', usuariosServices.addUsuarios);
+router.get('/',usuariosServices.obtenerUsuarios);
+router.get('/obtenerPorLogin/:usuario_login?',usuariosServices.obtenerUsuarioPorLogin);
+router.post('/agregar', usuariosServices.agregarUsuarios);
+
 
 
 module.exports = router;
